@@ -42,9 +42,9 @@ UserSchema.virtual("friendCount").get(function () {
   return this.friends.length;
 });
 
-UserSchema.post(`remove`, (user) => {
-  Thought.remove({ userId: user._id });
-});
+// UserSchema.post(`remove`, (user) => {
+//   Thought.remove({ userId: user._id });
+// });
 // UserSchema.post("remove", function (next) {
 //   this.model("Thought").remove({ User_id: this._id }, next);
 // });

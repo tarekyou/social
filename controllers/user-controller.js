@@ -70,12 +70,13 @@ const userController = {
       { _id: params.id }
       //   { $pull: { thoughts: { _id: params.userId } } }
     )
-      //   .then(Thought.deleteMany().where((userId = params.id)))
+      // .then(Thought.deleteMany().where((userId = params.id)))
       .then((dbUserData) => {
         if (!dbUserData) {
           res.status(404).json({ message: "No User with this particular ID!" });
           return;
         }
+        Thought.deleteMany({ _id: { $in: dbUserData.thoughts } });
         res.json(dbUserData);
       })
       .catch((err) => res.status(400).json(err));
