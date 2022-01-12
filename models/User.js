@@ -42,18 +42,6 @@ UserSchema.virtual("friendCount").get(function () {
   return this.friends.length;
 });
 
-// UserSchema.post(`remove`, (user) => {
-//   Thought.remove({ userId: user._id });
-// });
-// UserSchema.post("remove", function (next) {
-//   this.model("Thought").remove({ User_id: this._id }, next);
-// });
-
-// UserSchema.post("remove", function (doc) {
-//   this.model("Thought").remove({ userId: doc._id });
-// });
-
-// create the Users model using the Users Schema
 const User = model("User", UserSchema);
 
 // Export Users module

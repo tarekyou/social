@@ -84,25 +84,6 @@ const userController = {
       })
       .catch((err) => res.status(400).json(err));
   },
-  //   deleteUser({ params }, res) {
-  //     User.findById({ _id: params.id })
-  //       .then((dbUserData) => {
-  //         Thought.deleteMany({ _id: { $in: dbUserData.thoughts } });
-  //       })
-  //       .then((dbUserData) => {
-  //         User.findOneAndDelete({ _id: params.id });
-  //       })
-  //       .then((dbUserData) => {
-  //         if (!dbUserData) {
-  //           res.status(404).json({ message: "No User with this particular ID!" });
-  //           return;
-  //         }
-  //         // Thought.deleteMany({ _id: { $in: dbUserData.thoughts } });
-  //         // Thought.deleteMany({ $in: dbUserData.thoughts });
-  //         res.json(dbUserData);
-  //       })
-  //       .catch((err) => res.status(400).json(err));
-  //   },
 
   addFriend({ params }, res) {
     User.findOneAndUpdate(
